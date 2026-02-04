@@ -2,63 +2,103 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Profil Mahasiswa</title>
+  <title>Welcome | Pengembangan Web Perpustakaan</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
+      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      height: 100vh;
+      background: linear-gradient(135deg, #fde2e4, #fadadd);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.95);
-      width: 420px;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      background: #ffffff;
+      width: 90%;
+      max-width: 900px;
+      padding: 50px 60px;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     h1 {
-      margin: 0;
-      font-weight: 600;
-      color: #2c3e50;
-      font-size: 26px;
+      text-align: center;
+      font-size: 36px;
+      color: #2f855a;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
-    .subtitle {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 30px;
+    .desc {
+      text-align: center;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 40px;
     }
 
-    .info {
-      text-align: left;
-      margin-top: 20px;
+    .desc b {
+      color: #2f855a;
     }
 
-    .info p {
-      margin: 12px 0;
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .search-box input {
+      width: 60%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 2px solid #ddd;
       font-size: 15px;
-      color: #333;
+      outline: none;
     }
 
-    .label {
-      font-weight: 500;
-      color: #5a67d8;
+    .search-box input:focus {
+      border-color: #68d391;
     }
 
-    .footer {
+    .search-box button {
+      margin-left: 12px;
+      padding: 14px 24px;
+      background: #68d391;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-box button:hover {
+      background: #48bb78;
+    }
+
+    .profile {
       margin-top: 30px;
+      line-height: 1.9;
+      color: #444;
+    }
+
+    .profile span {
+      font-weight: 500;
+      color: #2f855a;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
       font-size: 13px;
       color: #999;
     }
@@ -67,19 +107,28 @@
 
 <body>
   <div class="card">
-    <h1>Eliza Salsabila Br.s</h1>
-    <div class="subtitle">Mahasiswa Universitas Sumatra Utara</div>
+    <h1>Welcome</h1>
 
-    <div class="info">
-      <p><span class="label">NIM</span> : 230709014</p>
-      <p><span class="label">Kelas</span> : B</p>
-      <p><span class="label">Universitas</span> : Universitas Sumatra Utara</p>
-      <p><span class="label">Mata Kuliah</span> : Pengembangan Web Perpustakaan</p>
+    <p class="desc">
+      Website ini dibuat sebagai bagian dari pemenuhan tugas mata kuliah
+      <b>Pengembangan Web Perpustakaan</b>.
+    </p>
+
+    <div class="search-box">
+      <input type="text" placeholder="Cari koleksi buku...">
+      <button>Cari</button>
     </div>
 
-    <div class="footer">
-      © 2026 | Web Profil Mahasiswa
+    <div class="profile">
+      <p><span>Nama</span> : Eliza Salsabila Br.s</p>
+      <p><span>NIM</span> : 230709014</p>
+      <p><span>Kelas</span> : B</p>
+      <p><span>Universitas</span> : Universitas Sumatra Utara</p>
     </div>
+
+    <footer>
+      © 2026 | Pengembangan Web Perpustakaan
+    </footer>
   </div>
 </body>
 </html>
