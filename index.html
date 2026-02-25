@@ -13,37 +13,27 @@
     font-family:'Segoe UI', sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    background:linear-gradient(135deg,#dff2e8,#f3fbf7);
-    color:#2f5d4a;
+    background:linear-gradient(135deg,#6bbf9a,#8fd3b8);
+    color:white;
 }
 
 /* NAVBAR */
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(107,191,154,0.9);
-    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    z-index:100;
+    padding:20px 50px;
 }
 
 nav h2{
-    color:white;
     font-weight:600;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
-    margin-left:20px;
+    color:white;
+    margin-left:25px;
     font-weight:500;
 }
 
@@ -51,219 +41,112 @@ nav a:hover{
     border-bottom:2px solid white;
 }
 
-/* ===== BERANDA FULL ===== */
-#home{
-    height:100vh;
+/* HERO */
+.hero{
+    height:90vh;
     display:flex;
-    align-items:center;
+    flex-direction:column;
     justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:40px;
+    padding:20px;
 }
 
-.home-box{
-    max-width:900px;
-}
-
-.home-box h1{
-    font-size:52px;
-    color:#2f5d4a;
+.hero h1{
+    font-size:48px;
     margin-bottom:15px;
 }
 
-.home-box h1 span{
-    color:#6bbf9a;
-}
-
-.home-box p{
-    font-size:19px;
-    color:#4f7a67;
+.hero p{
+    font-size:18px;
     margin-bottom:40px;
-    line-height:1.8;
 }
 
-.home-btn{
-    display:inline-block;
-    padding:14px 36px;
+.search-box{
+    background:#eaf7f1;
+    padding:40px;
+    border-radius:25px;
+    width:600px;
+    max-width:90%;
+    color:#2f5d4a;
+}
+
+.search-box input{
+    width:70%;
+    padding:12px;
+    border-radius:20px;
+    border:1px solid #6bbf9a;
+    outline:none;
+}
+
+.search-box button{
+    padding:12px 20px;
+    border:none;
     background:#6bbf9a;
     color:white;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:16px;
-    transition:0.3s;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-.home-btn:hover{
+.search-box button:hover{
     background:#55a885;
 }
 
-/* SECTION UMUM */
-section{
-    padding:90px 20px;
-    text-align:center;
-}
-
-.card{
-    background:white;
-    max-width:900px;
-    margin:30px auto;
-    padding:45px;
-    border-radius:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* CV */
-.cv-photo{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #6bbf9a;
-    margin-bottom:20px;
-}
-
-.cv-item{
-    text-align:left;
+.menu-btn{
     margin-top:25px;
 }
 
-.cv-item h3{
-    color:#3b6f5a;
-    margin-bottom:10px;
-}
-
-.cv-item ul{
-    padding-left:20px;
-}
-
-.cv-item li{
-    margin-bottom:8px;
-}
-
-/* BUTTON */
-.btn{
+.menu-btn a{
     display:inline-block;
-    margin-top:18px;
-    padding:12px 30px;
+    margin:8px;
+    padding:10px 20px;
+    border:1px solid #6bbf9a;
+    border-radius:20px;
+    text-decoration:none;
+    color:#2f5d4a;
+}
+
+.menu-btn a:hover{
     background:#6bbf9a;
     color:white;
-    border-radius:25px;
-    text-decoration:none;
 }
 
-.btn:hover{
-    background:#55a885;
-}
-
-/* FOOTER */
 footer{
     text-align:center;
-    padding:30px;
+    padding:20px;
     font-size:14px;
-    color:#4f7a67;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <h2>Eliza Library</h2>
     <div>
-        <a href="#home">Beranda</a>
-        <a href="#cv">CV</a>
-        <a href="#sosial">Media Sosial</a>
-        <a href="#media">Audio & Video</a>
+        <a href="index.html">Beranda</a>
+        <a href="cv.html">CV</a>
+        <a href="media.html">Media</a>
     </div>
 </nav>
 
-<!-- BERANDA -->
-<section id="home">
-    <div class="home-box">
-        <h1>Welcome to <span>Eliza Library</span></h1>
-        <p>
-            Ruang digital pribadi yang dirancang sebagai wadah pembelajaran,  
-            literasi informasi, serta dokumentasi akademik dalam bidang  
-            Ilmu Perpustakaan dan Sains Informasi.
-        </p>
+<div class="hero">
+    <h1>Welcome to Eliza Library</h1>
+    <p>Ribuan Buku Siap untuk Kamu Baca!</p>
 
-        <a href="#cv" class="home-btn">Explore My Profile</a>
-    </div>
-</section>
+    <div class="search-box">
+        <input type="text" placeholder="Masukkan kata kunci untuk mencari koleksi...">
+        <button>Cari</button>
 
-<!-- CV -->
-<section id="cv">
-    <div class="card">
-        <h1>Curriculum Vitae</h1>
-
-        <img src="photo-cv.jpeg" alt="Foto Eliza" class="cv-photo">
-
-        <p><b>Nama:</b> Eliza Salsabila Br.s</p>
-        <p><b>NIM:</b> 230709014</p>
-        <p><b>Kelas:</b> B</p>
-        <p><b>Email:</b> elizasalsabilabrs@gmail.com</p>
-        <p><b>No. HP:</b> 081262341547</p>
-
-        <div class="cv-item">
-            <h3>🎓 Pendidikan</h3>
-            <ul>
-                <li>S1 Ilmu Perpustakaan dan Sains Informasi – Universitas Sumatera Utara (2023 – Sekarang)</li>
-                <li>SMAN Perisai Kutacane</li>
-            </ul>
-        </div>
-
-        <div class="cv-item">
-            <h3>🛠 Keterampilan</h3>
-            <ul>
-                <li>Pengelolaan Koleksi Perpustakaan</li>
-                <li>Penelusuran Informasi</li>
-                <li>Microsoft Office</li>
-                <li>HTML Dasar</li>
-            </ul>
-        </div>
-
-        <div class="cv-item">
-            <h3>📌 Pengalaman</h3>
-            <ul>
-                <li>Praktik Pengelolaan Perpustakaan</li>
-                <li>Pengabdian Masyarakat Bidang Literasi</li>
-            </ul>
+        <div class="menu-btn">
+            <a href="cv.html">Profil Saya</a>
+            <a href="media.html">Media Sosial</a>
         </div>
     </div>
-</section>
-
-<!-- MEDIA SOSIAL -->
-<section id="sosial">
-    <div class="card">
-        <h1>Media Sosial</h1>
-        <p>Ikuti aktivitas dan dokumentasi saya di Instagram</p>
-
-        <a class="btn" 
-           href="https://www.instagram.com/elizasbilaa?igsh=YTdnMjVtbzdoeDZs&utm_source=qr" 
-           target="_blank">
-           🌸 Instagram Saya
-        </a>
-    </div>
-</section>
-
-<!-- AUDIO & VIDEO -->
-<section id="media">
-    <div class="card">
-        <h1>Audio & Video</h1>
-        <p>Konten video dan dokumentasi kegiatan</p>
-
-        <a class="btn" 
-           href="https://youtu.be/FVIehD--AYY?si=8Ql-IskA5OXc4XAN" 
-           target="_blank">
-           🎥 Tonton Video
-        </a>
-    </div>
-</section>
+</div>
 
 <footer>
-    © 2026 | Eliza Salsabila <br>
-    Ilmu Perpustakaan dan Sains Informasi – Universitas Sumatera Utara
+    © 2026 Eliza Library | Universitas Sumatera Utara
 </footer>
 
 </body>
