@@ -1,79 +1,323 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eliza Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindBloom Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #6BBF9A;
+  --primary-dark: #4CAF84;
+  --text-dark: #2f5d4a;
+}
 
-  <!-- Hubungkan ke CSS -->
-  <link rel="stylesheet" href="style.css">
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #4CAF84 0%, #A8E6CF 100%);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* NAVBAR */
+nav {
+  background: var(--primary-dark);
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+}
+
+nav .logo {
+  color:white;
+  font-weight:700;
+  font-size:18px;
+}
+
+.menu {
+  list-style:none;
+  display:flex;
+  align-items:center;
+  margin-left:40px;
+}
+
+.menu li {
+  margin-right:20px;
+  position:relative;
+}
+
+.menu a {
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* RIGHT MENU */
+.right-menu {
+  margin-left:auto;
+  display:flex;
+  gap:15px;
+}
+
+.right-menu a {
+  background:white;
+  color:var(--primary-dark);
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:14px;
+  text-decoration:none;
+}
+
+/* ===== DROPDOWN CLICK VERSION ===== */
+.dropdown-menu {
+  position:absolute;
+  top:40px;
+  left:0;
+  background:white;
+  border-radius:12px;
+  min-width:180px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  overflow:hidden;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.3s ease;
+}
+
+.dropdown-menu li {
+  list-style:none;
+}
+
+.dropdown-menu li a {
+  display:block;
+  padding:10px 18px;
+  color:#2f5d4a;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.dropdown-menu li a:hover {
+  background:#eaf7f1;
+}
+
+/* aktif */
+.dropdown-menu.active {
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* HERO */
+.hero {
+  text-align:center;
+  color:white;
+  padding:70px 20px;
+}
+
+.hero h1 {
+  font-size:40px;
+  font-weight:700;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.9);
+  width:85%;
+  max-width:900px;
+  margin:40px auto;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  text-align:center;
+  color:var(--text-dark);
+}
+
+/* SEARCH */
+.search-box {
+  display:flex;
+  justify-content:center;
+  margin-bottom:30px;
+}
+
+.search-box input {
+  width:70%;
+  padding:14px;
+  border-radius:30px;
+  border:2px solid var(--primary);
+  outline:none;
+}
+
+.search-box button {
+  padding:14px 25px;
+  margin-left:10px;
+  border-radius:30px;
+  border:none;
+  background:var(--primary);
+  color:white;
+  cursor:pointer;
+}
+
+/* TAG */
+.tag {
+  display:inline-block;
+  padding:12px 22px;
+  margin:10px;
+  background:#eaf7f1;
+  border-radius:25px;
+  border:1px solid var(--primary);
+  color:var(--text-dark);
+  font-weight:500;
+}
+
+/* FOOTER */
+footer {
+  margin-top:auto;
+  background:#2f5d4a;
+  color:white;
+  padding:40px 20px;
+}
+
+.footer-container {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer-section h4 {
+  margin-bottom:10px;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size:14px;
+  color:#d6f5e8;
+  text-decoration:none;
+  display:block;
+  margin-bottom:6px;
+}
+
+.footer-bottom {
+  text-align:center;
+  margin-top:25px;
+  font-size:13px;
+  opacity:0.8;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
+  <div class="logo">🌿 MindBloom Library</div>
+
   <ul class="menu">
-    <li><a href="#">Beranda</a></li>
-    <li><a href="#">Layanan</a></li>
+  <li><a href="index.html" target="_blank" rel="noopener noreferrer">Beranda</a></li>
+  <li><a href="koleksi.html" target="_blank" rel="noopener noreferrer">Koleksi</a></li>
 
-    <li class="dropdown">
-      <a href="#">Tentang Saya ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="cv.html" target="_blank">Curriculum Vitae</a></li>
-        <li><a href="https://instagram.com/elizasbilaa" target="_blank">Media Sosial</a></li>
-        <li><a href="https://youtu.be/1FVF-9KQiPo?si=g9WNllG6pzofofNe" target="_blank">Audio dan Video</a></li>
-      </ul>
-    </li> 
+  <li class="dropdown">
+    <a href="#" id="adminToggle">Admin ▾</a>
+    <ul class="dropdown-menu" id="adminMenu">
 
-    <li class="login-menu">
-      <a href="login.html" target="_blank">Login</a>
-    </li>
-  </ul>
+      <li>
+        <a href="fouder.html" target="_blank" rel="noopener noreferrer">
+          🌿 Founder
+        </a>
+      </li>
+
+      <li>
+        <a href="cv.html" target="_blank" rel="noopener noreferrer">
+          📄 CV
+        </a>
+      </li>
+
+      <li>
+        <a href="https://instagram.com/usernamekamu"
+           target="_blank"
+           rel="noopener noreferrer">
+          📱 Instagram
+        </a>
+      </li>
+
+    </ul>
+  </li>
+
+  <li>
+    <a href="layanan.html" target="_blank" rel="noopener noreferrer">
+      Layanan
+    </a>
+  </li>
+</ul>
+
+<div class="right-menu">
+  <a href="login.html" target="_blank" rel="noopener noreferrer">Login</a>
+  <a href="signup.html" target="_blank" rel="noopener noreferrer">Sign In</a>
+</div>
 </nav>
 
 <section class="hero">
-  <h1>Welcome to Eliza Library</h1>
-  <p>Ribuan Buku Siap untuk Kamu Baca!</p>
+  <h1>Welcome to MindBloom Library</h1>
+  <p>Ruang Literasi untuk Kesehatan Mental & Self-Healing</p>
 </section>
 
 <div class="card">
-
   <div class="search-box">
-    <input type="text" placeholder="Masukkan kata kunci untuk mencari koleksi...">
+    <input type="text" placeholder="Cari buku psikologi, self healing, mindfulness...">
     <button>Cari</button>
   </div>
 
   <div>
-    <span class="tag">Pojok Bacaan</span>
-    <span class="tag">Wawasan Akademik</span>
-    <span class="tag">Ruang Diskusi</span>
+    <span class="tag">🧠 Psikologi & Self Development</span>
+    <span class="tag">🌿 Mindfulness & Healing Space</span>
+    <span class="tag">💬 Ruang Refleksi & Diskusi</span>
   </div>
-
-  <h3 style="margin:20px 0;">🕒 Jam Operasional</h3>
-
-  <div class="jam-operasional">
-    <p><strong>Senin – Kamis</strong><br>08.00 – 16.00 WIB</p>
-    <p><strong>Jumat</strong><br>08.30 – 16.30 WIB</p>
-  </div>
-
-  <hr>
-
-  <div class="footer-text">
-    <strong>Eliza Salsabila</strong><br>
-    230709062<br>
-    Universitas Sumatera Utara
-  </div>
-
-  <div class="footer">
-    © 2026 Eliza Library
-  </div>
-
 </div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>MindBloom Library</h4>
+      <p>Perpustakaan khusus kesehatan mental yang menyediakan koleksi buku dan ruang refleksi untuk mendukung kesejahteraan jiwa.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Kontak</h4>
+      <p>Email: info@mindbloomlibrary.com</p>
+      <p>Instagram: @mindbloomlibrary</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MindBloom Library — Growing Minds, Healing Hearts 🌿
+  </div>
+</footer>
+
+<!-- JAVASCRIPT DROPDOWN CLICK -->
+<script>
+const toggle = document.getElementById("adminToggle");
+const menu = document.getElementById("adminMenu");
+
+toggle.addEventListener("click", function(e) {
+  e.preventDefault();
+  menu.classList.toggle("active");
+});
+
+document.addEventListener("click", function(e) {
+  if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove("active");
+  }
+});
+</script>
 
 </body>
 </html>
