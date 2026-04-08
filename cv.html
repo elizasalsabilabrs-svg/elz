@@ -24,20 +24,41 @@ nav{
     align-items:center;
 }
 
-nav .logo{
+.logo{
     color:white;
     font-weight:700;
 }
 
-/* BACK BUTTON */
-.back-btn{
+/* NAV BUTTONS */
+.nav-right{
     margin-left:auto;
+    display:flex;
+    gap:10px;
+}
+
+.nav-btn{
     background:white;
     color:#4CAF84;
     padding:6px 14px;
     border-radius:20px;
     text-decoration:none;
     font-size:14px;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    background:#4CAF84;
+    color:white;
+}
+
+/* ADMIN BUTTON */
+.nav-btn.admin{
+    background:#2f5d4a;
+    color:white;
+}
+
+.nav-btn.admin:hover{
+    background:#1e3f34;
 }
 
 /* CARD */
@@ -48,6 +69,7 @@ nav .logo{
     padding:40px;
     border-radius:25px;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
 .cv-photo{
@@ -57,6 +79,12 @@ nav .logo{
     object-fit:cover;
     border:4px solid #6bbf9a;
     margin-bottom:20px;
+}
+
+/* LIST */
+ul{
+    text-align:left;
+    display:inline-block;
 }
 
 /* FOOTER */
@@ -100,7 +128,11 @@ footer {
 <!-- NAVBAR -->
 <nav>
     <div class="logo">🌿 MindBloom Library</div>
-    <a href="index.html" class="back-btn">⬅ Beranda</a>
+
+    <div class="nav-right">
+        <a href="index.html" class="nav-btn">⬅ Beranda</a>
+        <a href="admin.html" class="nav-btn admin">⚙ Admin</a>
+    </div>
 </nav>
 
 <!-- CONTENT -->
