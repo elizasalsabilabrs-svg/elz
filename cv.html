@@ -11,19 +11,36 @@ body{
     background:linear-gradient(135deg,#dff2e8,#f3fbf7);
     color:#2f5d4a;
     margin:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
+/* NAVBAR */
 nav{
     background:#6bbf9a;
     padding:15px 40px;
+    display:flex;
+    align-items:center;
 }
 
-nav a{
+nav .logo{
     color:white;
-    text-decoration:none;
-    margin-right:20px;
+    font-weight:700;
 }
 
+/* BACK BUTTON */
+.back-btn{
+    margin-left:auto;
+    background:white;
+    color:#4CAF84;
+    padding:6px 14px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* CARD */
 .card{
     background:white;
     max-width:800px;
@@ -41,16 +58,52 @@ nav a{
     border:4px solid #6bbf9a;
     margin-bottom:20px;
 }
+
+/* FOOTER */
+footer {
+    margin-top:auto;
+    background:#2f5d4a;
+    color:white;
+    padding:40px 20px;
+}
+
+.footer-container {
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-section h4 {
+    margin-bottom:10px;
+}
+
+.footer-section p {
+    font-size:14px;
+    color:#d6f5e8;
+    margin-bottom:6px;
+}
+
+.footer-bottom {
+    text-align:center;
+    margin-top:25px;
+    font-size:13px;
+    opacity:0.8;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <a href="index.html">Beranda</a>
-    <a href="media.html">Media</a>
+    <div class="logo">🌿 MindBloom Library</div>
+    <a href="index.html" class="back-btn">⬅ Beranda</a>
 </nav>
 
+<!-- CONTENT -->
 <div class="card">
     <h1>Curriculum Vitae</h1>
 
@@ -59,7 +112,7 @@ nav a{
     <p><b>Nama:</b> Eliza Salsabila Br.s</p>
     <p><b>NIM:</b> 230709014</p>
     <p><b>Email:</b> elizasalsabilabrs@gmail.com</p>
-    <p><b>No HP:</b> 081262341547</p>
+    <p><b>No HP:</b> 081262341574</p>
 
     <h3>Pendidikan</h3>
     <ul>
@@ -75,6 +128,38 @@ nav a{
         <li>HTML Dasar</li>
     </ul>
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>MindBloom Library</h4>
+      <p>Perpustakaan khusus kesehatan mental yang menyediakan ruang refleksi dan pembelajaran.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Kontak</h4>
+      <p>Email: info@mindbloomlibrary.com</p>
+      <p>Instagram: @mindbloom.library</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>📍 Alamat</h4>
+      <p>Medan, Sumatera Utara</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>🕒 Jam</h4>
+      <p>08.00 - 20.00</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MindBloom Library — Growing Minds, Healing Hearts 🌿
+  </div>
+</footer>
 
 </body>
 </html>
