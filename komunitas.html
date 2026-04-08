@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Komunitas - MindBloom Library</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  background: linear-gradient(180deg, #4CAF84 0%, #A8E6CF 100%);
+  color:#2f5d4a;
+}
+
+/* CONTAINER */
+.container {
+  max-width:1000px;
+  margin:40px auto;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+h1 {
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* EVENT */
+.event {
+  background:#eaf7f1;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+/* FORM */
+input, textarea {
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+  background:#4CAF84;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+button:hover {
+  background:#3e9e72;
+}
+
+/* POST */
+.post {
+  background:#f4fdf9;
+  padding:15px;
+  border-radius:12px;
+  margin-top:10px;
+}
+
+/* TOMBOL HAPUS */
+.post button {
+  margin-top:10px;
+  background:#ff6b6b;
+  border:none;
+  color:white;
+  padding:6px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.post button:hover {
+  background:#e55050;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>🌿 Komunitas MindBloom</h1>
+
+  <!-- EVENT -->
+  <h2>📅 Event Komunitas</h2>
+
+  <div class="event">
+    <h3>🧘 Mindfulness Session</h3>
+    <p>Tanggal: 10 Mei 2026</p>
+    <p>Kegiatan meditasi bersama untuk menenangkan pikiran.</p>
+  </div>
+
+  <div class="event">
+    <h3>📚 Sharing Buku Self-Healing</h3>
+    <p>Tanggal: 15 Mei 2026</p>
+    <p>Diskusi buku tentang self healing dan pengalaman pribadi.</p>
+  </div>
+
+  <div class="event">
+    <h3>💬 Open Talk Mental Health</h3>
+    <p>Tanggal: 20 Mei 2026</p>
+    <p>Forum terbuka untuk berbagi cerita dan saling support.</p>
+  </div>
+
+  <!-- FORUM -->
+  <h2>💬 Forum Diskusi</h2>
+
+  <input type="text" id="nama" placeholder="Nama kamu">
+  <textarea id="pesan" rows="4" placeholder="Tulis topik atau cerita kamu..."></textarea>
+  <button onclick="tambahPost()">Posting</button>
+
+  <div id="forumList"></div>
+
+</div>
+
+<script>
+function tambahPost() {
+  const nama = document.getElementById("nama").value;
+  const pesan = document.getElementById("pesan").value;
+
+  if (nama === "" || pesan === "") {
+    alert("Harap isi nama dan pesan!");
+    return;
+  }
+
+  const post = document.createElement("div");
+  post.classList.add("post");
+
+  post.innerHTML = `
+    <strong>${nama}</strong>
+    <p>${pesan}</p>
+    <button onclick="hapusPost(this)">Hapus</button>
+  `;
+
+  document.getElementById("forumList").prepend(post);
+
+  document.getElementById("nama").value = "";
+  document.getElementById("pesan").value = "";
+}
+
+function hapusPost(btn) {
+  if (confirm("Yakin mau hapus postingan ini?")) {
+    btn.parentElement.remove();
+  }
+}
+</script>
+
+</body>
+</html>
