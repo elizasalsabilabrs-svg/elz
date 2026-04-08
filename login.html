@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login - MindBloom Library</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -22,12 +23,44 @@
 
 body{
   background:linear-gradient(180deg,#4CAF84 0%,#A8E6CF 100%);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* NAVBAR */
+nav{
+  background:var(--primary-dark);
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  color:white;
+  font-weight:700;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  margin-left:auto;
+  background:white;
+  color:var(--primary-dark);
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* LOGIN WRAPPER */
+.wrapper{
+  flex:1;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
 }
 
+/* CARD */
 .card{
   background:white;
   padding:40px;
@@ -88,28 +121,102 @@ button:hover{
   text-decoration:none;
   font-weight:600;
 }
+
+/* FOOTER */
+footer {
+  background:#2f5d4a;
+  color:white;
+  padding:40px 20px;
+}
+
+.footer-container {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer-section h4 {
+  margin-bottom:10px;
+}
+
+.footer-section p {
+  font-size:14px;
+  color:#d6f5e8;
+  margin-bottom:6px;
+}
+
+.footer-bottom {
+  text-align:center;
+  margin-top:25px;
+  font-size:13px;
+  opacity:0.8;
+}
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>🌿 Login</h2>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">🌿 MindBloom Library</div>
+  <a href="index.html" class="back-btn">⬅ Beranda</a>
+</nav>
 
-  <div class="input-group">
-    <label>Email</label>
-    <input type="email" placeholder="Masukkan email">
+<!-- LOGIN -->
+<div class="wrapper">
+  <div class="card">
+    <h2>🌿 Login</h2>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="Masukkan email">
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="Masukkan password">
+    </div>
+
+    <button>Masuk</button>
+
+    <p>Belum punya akun? <a href="signup.html">Daftar di sini</a></p>
   </div>
-
-  <div class="input-group">
-    <label>Password</label>
-    <input type="password" placeholder="Masukkan password">
-  </div>
-
-  <button>Masuk</button>
-
-  <p>Belum punya akun? <a href="signup.html">Daftar di sini</a></p>
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>MindBloom Library</h4>
+      <p>Perpustakaan khusus kesehatan mental yang menyediakan ruang refleksi dan pembelajaran.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Kontak</h4>
+      <p>Email: info@mindbloomlibrary.com</p>
+      <p>Instagram: @mindbloomlibrary</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>📍 Alamat</h4>
+      <p>Medan, Sumatera Utara</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>🕒 Jam</h4>
+      <p>08.00 - 20.00</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MindBloom Library — Growing Minds, Healing Hearts 🌿
+  </div>
+</footer>
 
 </body>
 </html>
