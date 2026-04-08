@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koleksi | MindBloom Library</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -31,12 +32,25 @@ body{
 nav{
   background: var(--primary-dark);
   padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 nav .logo{
   color:white;
   font-weight:700;
   font-size:18px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  background:white;
+  color:var(--primary-dark);
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* HEADER */
@@ -54,30 +68,7 @@ nav .logo{
   opacity:0.9;
 }
 
-/* FILTER TAG */
-.filter{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.filter span{
-  display:inline-block;
-  padding:10px 20px;
-  margin:8px;
-  background:#eaf7f1;
-  border-radius:20px;
-  border:1px solid var(--primary);
-  color:var(--text-dark);
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.filter span:hover{
-  background:var(--primary);
-  color:white;
-}
-
-/* KOLEKSI GRID */
+/* GRID */
 .grid{
   width:90%;
   max-width:1100px;
@@ -133,70 +124,162 @@ nav .logo{
   color:var(--text-dark);
 }
 
-/* FOOTER */
-footer{
+/* BUTTON LINK */
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  text-decoration:none;
+  background:var(--primary-dark);
+  color:white;
+  padding:8px 14px;
+  border-radius:15px;
+  font-size:13px;
+  transition:0.3s;
+}
+
+.card a:hover{
+  background:#2f5d4a;
+}
+
+/* FOOTER (TIDAK DIUBAH) */
+footer {
   margin-top:auto;
   background:#2f5d4a;
   color:white;
-  padding:30px;
-  text-align:center;
+  padding:40px 20px;
+}
+
+.footer-container {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer-section h4 {
+  margin-bottom:10px;
+}
+
+.footer-section p {
   font-size:14px;
+  color:#d6f5e8;
+  margin-bottom:6px;
+}
+
+.footer-bottom {
+  text-align:center;
+  margin-top:25px;
+  font-size:13px;
+  opacity:0.8;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
   <div class="logo">🌿 MindBloom Library</div>
+  <a href="index.html" class="back-btn">⬅ Beranda</a>
 </nav>
 
+<!-- HEADER -->
 <section class="header">
   <h1>Koleksi MindBloom</h1>
-  <p>Pilih bacaan sesuai kebutuhan dan suasana hatimu 💚</p>
+  <p>Pilih bacaan dan media sesuai kebutuhan mentalmu 💚</p>
 </section>
 
-<div class="filter">
-  <span>🧠 Psikologi</span>
-  <span>🌿 Self Healing</span>
-  <span>💬 Mindfulness</span>
-  <span>✨ Self Development</span>
-</div>
-
+<!-- GRID -->
 <div class="grid">
 
+  <!-- BUKU -->
   <div class="card">
-    <div class="book-cover">🧠</div>
-    <h3>The Psychology of Happiness</h3>
-    <p>Mengenal konsep kebahagiaan dari sudut pandang ilmiah.</p>
-    <span class="mood">Cocok saat: Butuh Motivasi</span>
+    <div class="book-cover">📚</div>
+    <h3>Koleksi Buku Fisik</h3>
+    <p>Buku psikologi, self healing, dan pengembangan diri.</p>
+    <span class="mood">Mental Health</span>
   </div>
 
+  <!-- DIGITAL -->
   <div class="card">
-    <div class="book-cover">🌿</div>
-    <h3>Healing Your Inner Child</h3>
-    <p>Menyembuhkan luka emosional masa lalu dengan refleksi diri.</p>
-    <span class="mood">Cocok saat: Overthinking</span>
+    <div class="book-cover">📖</div>
+    <h3>Koleksi Digital</h3>
+    <p>E-book, jurnal, dan materi mindfulness.</p>
+    <span class="mood">E-book</span>
   </div>
 
+  <!-- VIDEO -->
   <div class="card">
-    <div class="book-cover">💬</div>
-    <h3>Mindful Living</h3>
-    <p>Panduan hidup lebih sadar dan hadir di setiap momen.</p>
-    <span class="mood">Cocok saat: Ingin Tenang</span>
+    <div class="book-cover">🎥</div>
+    <h3>Video Pembelajaran</h3>
+    <p>Video self healing, motivasi, dan mindfulness.</p>
+    <span class="mood">Video</span>
+    <br>
+    <a href="https://youtube.com" target="_blank">Lihat Video</a>
   </div>
 
+  <!-- TOP PICKS -->
+  <div class="card">
+    <div class="book-cover">⭐</div>
+    <h3>Top Picks Minggu Ini</h3>
+    <p>Rekomendasi bacaan terbaik untuk kesehatan mental.</p>
+    <span class="mood">Rekomendasi</span>
+  </div>
+
+  <!-- UPDATE -->
+  <div class="card">
+    <div class="book-cover">🆕</div>
+    <h3>Update Koleksi</h3>
+    <p>Koleksi terbaru yang baru ditambahkan.</p>
+    <span class="mood">Terbaru</span>
+  </div>
+
+  <!-- SKILL -->
   <div class="card">
     <div class="book-cover">✨</div>
-    <h3>Atomic Habits</h3>
-    <p>Membangun kebiasaan kecil untuk perubahan besar.</p>
-    <span class="mood">Cocok saat: Ingin Produktif</span>
+    <h3>Skill Booster</h3>
+    <p>Materi untuk meningkatkan mental strength & self development.</p>
+    <span class="mood">Pengembangan Diri</span>
   </div>
 
 </div>
 
+<!-- FOOTER (ASLI PUNYA KAMU) -->
 <footer>
-  © 2026 MindBloom Library — Growing Minds, Healing Hearts 🌿
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>MindBloom Library</h4>
+      <p>Perpustakaan khusus kesehatan mental yang menyediakan koleksi buku dan ruang refleksi untuk mendukung kesejahteraan jiwa.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Kontak</h4>
+      <p>Email: info@mindbloomlibrary.com</p>
+      <p>Instagram: @mindbloom.library</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>📍 Alamat</h4>
+      <p>Jl. Pendidikan No. 10</p>
+      <p>Medan, Sumatera Utara</p>
+      <p>Indonesia</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>🕒 Jam Operasional</h4>
+      <p>Senin - Jumat : 08.00 - 20.00</p>
+      <p>Sabtu : 09.00 - 18.00</p>
+      <p>Minggu : Tutup</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MindBloom Library — Growing Minds, Healing Hearts 🌿
+  </div>
 </footer>
 
 </body>
