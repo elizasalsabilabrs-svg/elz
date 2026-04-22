@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perulangan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #6BBF9A;
+  --primary-dark: #4CAF84;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #4CAF84, #A8E6CF);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* NAVBAR */
+nav {
+  background: var(--primary-dark);
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+}
+
+.logo {
+  color:white;
+  font-weight:700;
+}
+
+.menu {
+  list-style:none;
+  margin-left:40px;
+}
+
+.menu a {
+  color:white;
+  text-decoration:none;
+}
+
+/* CONTENT */
+.container {
+  text-align:center;
+  padding:40px;
+  color:white;
+}
+
+button {
+  padding:12px 25px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#4CAF84;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+/* OUTPUT BOX */
+.box {
+  background:white;
+  width:80%;
+  max-width:600px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:20px;
+  color:black;
+  height:300px;
+  overflow-y:scroll;
+  text-align:left;
+}
+
+/* FOOTER */
+footer {
+  margin-top:auto;
+  background:#2f5d4a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">🌿 MindBloom Library</div>
+  <ul class="menu">
+    <li><a href="index.html">Beranda</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Perulangan 1–1000</h1>
+  <p>Klik tombol untuk menampilkan data</p>
+
+  <button onclick="tampil()">Tampilkan</button>
+
+  <div class="box" id="output"></div>
+</div>
+
+<footer>
+  © 2026 MindBloom Library
+</footer>
+
+<script>
+function tampil(){
+  let text = "";
+  for(let i=1; i<=1000; i++){
+    text += i + ". Ini adalah hari ke-" + i + " belajar PHP<br>";
+  }
+  document.getElementById("output").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
