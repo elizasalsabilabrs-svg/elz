@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #6BBF9A;
+  --primary-dark: #4CAF84;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #4CAF84, #A8E6CF);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* NAVBAR */
+nav {
+  background: var(--primary-dark);
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+}
+
+.logo {
+  color:white;
+  font-weight:700;
+}
+
+.menu {
+  list-style:none;
+  margin-left:40px;
+}
+
+.menu a {
+  color:white;
+  text-decoration:none;
+}
+
+/* CONTENT */
+.container {
+  text-align:center;
+  padding:50px;
+  color:white;
+}
+
+.box {
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  width:300px;
+  margin:30px auto;
+  color:black;
+}
+
+/* INPUT */
+input, select {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+  padding:10px;
+  width:100%;
+  border:none;
+  border-radius:15px;
+  background:#4CAF84;
+  color:white;
+  cursor:pointer;
+}
+
+/* RESULT */
+.result {
+  margin-top:15px;
+  font-weight:600;
+}
+
+/* FOOTER */
+footer {
+  margin-top:auto;
+  background:#2f5d4a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">🌿 MindBloom Library</div>
+  <ul class="menu">
+    <li><a href="index.html">Beranda</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Kalkulator</h1>
+  <p>Hitung 2 bilangan</p>
+
+  <div class="box">
+    <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+    <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+
+    <select id="operator">
+      <option value="+">Tambah (+)</option>
+      <option value="-">Kurang (-)</option>
+      <option value="*">Kali (×)</option>
+      <option value="/">Bagi (÷)</option>
+    </select>
+
+    <button onclick="hitung()">Hitung</button>
+
+    <div class="result" id="hasil"></div>
+  </div>
+</div>
+
+<footer>
+  © 2026 MindBloom Library
+</footer>
+
+<script>
+function hitung() {
+  let a = parseFloat(document.getElementById("angka1").value);
+  let b = parseFloat(document.getElementById("angka2").value);
+  let op = document.getElementById("operator").value;
+  let hasil;
+
+  if (isNaN(a) || isNaN(b)) {
+    hasil = "⚠️ Masukkan angka yang valid!";
+  } else {
+    if (op == "+") hasil = a + b;
+    else if (op == "-") hasil = a - b;
+    else if (op == "*") hasil = a * b;
+    else if (op == "/") {
+      if (b == 0) hasil = "❌ Tidak bisa dibagi 0";
+      else hasil = a / b;
+    }
+  }
+
+  document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+}
+</script>
+
+</body>
+</html>
